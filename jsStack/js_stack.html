@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+
+<head>
+    <meta charset="UTF-8">
+    <title>js stack</title>
+</head>
+
+<body>
+    <script type="text/javascript" src="js_stack.js"></script>
+    <script type="text/javascript">
+    var stack = new Stack();
+    console.log(stack.isEmpty());
+    stack.push(2);
+    stack.push(3);
+    stack.push(4, 5, 6);
+    console.log(stack.size());
+    stack.print()
+
+    console.log(stack.pop());
+    console.log(stack.pop());
+    console.log(stack.size());
+    stack.push(3);
+    stack.print();
+    </script>
+    <!-- <script type="text/javascript" src="baseConvert.js"></script>
+    <script type="text/javascript">
+    var num = 100,
+        binaryStr = '';
+    binaryStr = ten2two(num);
+    console.log(binaryStr);
+
+    num = 100345;
+    console.log(baseConvert(num, 2));
+    console.log(baseConvert(num, 8));
+    console.log(baseConvert(num, 16));
+    </script> -->
+    <!-- <script type="text/javascript" src="balanceSymbols.js"></script>
+    <script type="text/javascript">
+    console.log(campareSymbols('{{([abc][])abc}()}abc'));
+    console.log(campareSymbols('[{abc(abc)]'));
+    console.log(campareSymbols('(hello world))'));
+    </script> -->
+    <!-- <script type="text/javascript" src="hanoiTower.js"></script>
+    <script type="text/javascript">
+    var source = new Stack();
+    // source.push(4);
+    source.push(3);
+    source.push(2);
+    source.push(1);
+
+    var dest = new Stack();
+    var helper = new Stack();
+
+    hanoiTower(source.size(), source, dest, helper);
+
+    source.print();
+    helper.print();
+    dest.print();
+    </script> -->
+</body>
+
+</html>
