@@ -28,33 +28,6 @@ function LinkedList() {
         }
 
         length++;
-    };
-
-    this.removeAt = function(pos) {
-        //检查位置是否合法
-        if (pos > -1 && pos < length) {
-            var current = head,
-                previous,
-                index = 0;
-
-            //移除第一项
-            if (pos === 0) {
-                head = current.next;
-            } else {
-                while (index < pos) {
-                    previous = current;
-                    current = current.next;
-                    index++;
-                }
-
-                //将previous和current的下一项连接起来，移除current
-                previous.next = current.next;
-            }
-            length--;
-            return current.elem;
-        } else {
-            return null;
-        }
     }
 
     this.insert = function(pos, elem) {
@@ -85,16 +58,36 @@ function LinkedList() {
         }
     }
 
-    this.toString = function() {
-        var current = head,
-            string = '';
+    this.removeAt = function(pos) {
+        //检查位置是否合法
+        if (pos > -1 && pos < length) {
+            var current = head,
+                previous,
+                index = 0;
 
-        while (current) {
-            string += current.elem + (current.next ? ' ' : '');
-            current = current.next;
+            //移除第一项
+            if (pos === 0) {
+                head = current.next;
+            } else {
+                while (index < pos) {
+                    previous = current;
+                    current = current.next;
+                    index++;
+                }
+
+                //将previous和current的下一项连接起来，移除current
+                previous.next = current.next;
+            }
+            length--;
+            return current.elem;
+        } else {
+            return null;
         }
+    }
 
-        return string;
+    this.remove = function(elem) {
+        var index = this.indexOf(elem);
+        return this.removeAt(index);
     }
 
     this.indexOf = function(elem) {
@@ -112,11 +105,6 @@ function LinkedList() {
         return -1;
     }
 
-    this.remove = function(elem) {
-        var index = this.indexOf(elem);
-        return this.removeAt(index);
-    }
-
     this.isEmpty = function() {
         return length === 0;
     }
@@ -127,6 +115,18 @@ function LinkedList() {
 
     this.getHead = function() {
         return head;
+    }
+
+    this.toString = function() {
+        var current = head,
+            string = '';
+
+        while (current) {
+            string += current.elem + (current.next ? ' ' : '');
+            current = current.next;
+        }
+
+        return string;
     }
 
     this.print = function() {
