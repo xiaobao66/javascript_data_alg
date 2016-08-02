@@ -43,7 +43,7 @@
     list.remove(18);
     list.print();
     </script> -->
-    <script type="text/javascript" src="js_double_linked_list.js"></script>
+    <!-- <script type="text/javascript" src="js_double_linked_list.js"></script>
     <script type="text/javascript">
     var list = new DoublyLinkedList();
 
@@ -75,7 +75,7 @@
     list.print();
     list.inversePrint();
 
-    list.removeAt(list.size() - 1);
+    list.remove(18);
     list.print();
     list.inversePrint();
 
@@ -94,6 +94,37 @@
     list.remove(17);
     list.print();
     list.inversePrint();
+    </script> -->
+    <script type="text/javascript" src="js_circle_linked_list.js"></script>
+    <script type="text/javascript">
+    var circularLinkedList = new CircleLinkedList();
+
+    circularLinkedList.append(15);
+    circularLinkedList.print();
+
+    circularLinkedList.append(16);
+    circularLinkedList.print();
+
+    circularLinkedList.insert(0, 14);
+    circularLinkedList.print();
+
+    circularLinkedList.insert(1, 14.5);
+    circularLinkedList.print();
+
+    circularLinkedList.insert(4, 17);
+    circularLinkedList.print();
+
+    circularLinkedList.removeAt(0);
+    circularLinkedList.print();
+
+    circularLinkedList.removeAt(1);
+    circularLinkedList.print();
+
+    circularLinkedList.remove(17);
+    circularLinkedList.print();
+
+    console.log(circularLinkedList.indexOf(14.5));
+    console.log(circularLinkedList.indexOf(16));
     </script>
 </body>
 
