@@ -76,8 +76,12 @@ function CircleLinkedList() {
                     current = current.next;
                 }
 
-                head = head.next;
-                current.next = head;
+                if (length === 1) {
+                    head = null;
+                } else {
+                    head = head.next;
+                    current.next = head;
+                }
             } else {
                 while (index < pos) {
                     previous = current;
@@ -132,7 +136,7 @@ function CircleLinkedList() {
 
     this.toString = function() {
         var current = head,
-            str = current.elem;
+            str = current ? current.elem : '';
 
         while (current.next !== head) {
             current = current.next;
