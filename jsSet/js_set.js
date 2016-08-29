@@ -1,11 +1,13 @@
 function Set() {
     var items = {};
 
+    //has
     this.has = function(val) {
         // return val in items;
         return items.hasOwnProperty(val);
     };
 
+    //add
     this.add = function(val) {
         if (!this.has(val)) {
             items[val] = val;
@@ -15,6 +17,7 @@ function Set() {
         return false;
     };
 
+    //remove
     this.remove = function(val) {
         if (this.has(val)) {
             delete items[val];
@@ -24,14 +27,17 @@ function Set() {
         return false;
     };
 
+    //clear
     this.clear = function() {
         items = {};
     };
 
+    //size 使用Object.keys方法返回一个属性数组，通过数组的长度来获取集合的大小
     this.size = function() {
         return Object.keys(items).length;
     };
 
+    //sizeLegacy 与size方法等价
     this.sizeLegacy = function() {
         var count = 0;
         for (var prop in items) {
@@ -43,11 +49,13 @@ function Set() {
         return count;
     };
 
+    //values 使用Object.keys方法返回一个数组
     this.values = function() {
         return Object.keys(items);
     };
 
-    this.valueLegacy = function() {
+    //valuesLegacy 与values方法等价
+    this.valuesLegacy = function() {
         var vals = [];
         for (var prop in items) {
             if (items.hasOwnProperty(prop)) {
@@ -58,6 +66,7 @@ function Set() {
         return vals;
     }
 
+    //集合的并
     this.union = function(otherSet) {
         var unionSet = new Set();
 
@@ -74,6 +83,7 @@ function Set() {
         return unionSet;
     };
 
+    //集合的交
     this.intersection = function(otherSet) {
         var intersectionSet = new Set();
 
@@ -87,6 +97,7 @@ function Set() {
         return intersectionSet;
     };
 
+    //集合的差
     this.difference = function(otherSet) {
         var differenceSet = new Set();
 
@@ -100,6 +111,7 @@ function Set() {
         return differenceSet;
     };
 
+    //集合的子集
     this.subset = function(otherSet) {
         if (this.size() > otherSet.size()) {
             return false;
