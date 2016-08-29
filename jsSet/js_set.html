@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+
+<head>
+    <meta charset="UTF-8">
+    <title>js set</title>
+</head>
+
+<body>
+    <script type="text/javascript" src="js_set.js"></script>
+    <script type="text/javascript">
+    // var set = new Set();
+    // set.add(1);
+    // set.add('xiaobao');
+
+    // console.log(set.size());
+    // console.log(set.sizeLegacy());
+
+    // console.log(set.values());
+    // console.log(set.valueLegacy());
+
+    // set.remove(1);
+    // console.log(set.values());
+
+    // set.clear();
+    // console.log(set.values());
+
+    var setA = new Set();
+    setA.add(1);
+    setA.add(2);
+    setA.add(3);
+    setA.add('xiaobao');
+
+    var setB = new Set();
+    setB.add(2);
+    setB.add(3);
+    setB.add(4);
+    setB.add('hello world');
+
+    // var unionSet = setA.union(setB);
+    // console.log(unionSet.values());
+
+    // var intersectionSet = setA.intersection(setB);
+    // console.log(intersectionSet.values());
+
+    // var differenceSet = setA.difference(setB);
+    // console.log(differenceSet.values());
+
+    // var differenceSet2 = setB.difference(setA);
+    // console.log(differenceSet2.values());
+
+    var setC = new Set();
+    setC.add(1);
+    setC.add('xiaobao');
+
+    console.log(setA.subset(setB));
+    console.log(setC.subset(setA));
+    </script>
+</body>
+
+</html>
