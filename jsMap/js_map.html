@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+
+<head>
+    <meta charset="UTF-8">
+    <title>js map</title>
+</head>
+
+<body>
+    <script type="text/javascript" src="js_map.js"></script>
+    <script type="text/javascript">
+    var dictionary = new Dictionary();
+    dictionary.set('xiaobao', 'hello world');
+    dictionary.set('baobao', 'hello');
+    dictionary.set('wxiaobao', 'welcome');
+
+    // console.log(dictionary.has('xiaobao'));
+    // console.log(dictionary.size());
+    // console.log(dictionary.keys());
+    // console.log(dictionary.values());
+    // console.log(dictionary.entries());
+    // console.log(dictionary.get('baobao'));
+
+    dictionary.remove('wxiaobao');
+    console.log(dictionary.keys());
+    console.log(dictionary.values());
+    console.log(dictionary.entries());
+    console.log(dictionary.getItems());
+    </script>
+</body>
+
+</html>
