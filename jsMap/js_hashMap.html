@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+
+<head>
+    <meta charset="UTF-8">
+    <title>js hashMap</title>
+</head>
+
+<body>
+    <script type="text/javascript" src="js_hashMap.js"></script>
+    <script type="text/javascript">
+    var hash = new HashMap();
+    hash.put('xiaobao', 'hello world');
+    hash.put('baobao', 'hello');
+    hash.put('wxiaobao', 'welcome');
+
+    // console.log(hash.get('xiaobao'));
+    // console.log(hash.get('hahaha'));
+
+    hash.remove('xiaobao');
+    console.log(hash.get('xiaobao'));
+    </script>
+</body>
+
+</html>
