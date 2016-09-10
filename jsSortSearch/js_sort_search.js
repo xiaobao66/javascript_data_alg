@@ -166,4 +166,63 @@ function ArrayList() {
     this.quickSort = function() {
         quick(array, 0, array.length - 1);
     };
+
+    //顺序搜索算法
+    this.sequentialSearch = function(item) {
+        for (var i = 0; i < array.length; i++) {
+            if (item === array[i]) {
+                return i;
+            }
+        }
+
+        return -1;
+    };
+
+    //找出最大数
+    this.max = function() {
+        var max = array[0];
+        for (var i = 1; i < array.length; i++) {
+            if (max < array[i]) {
+                max = array[i];
+            }
+        }
+
+        return max;
+    };
+
+    //找出最小数
+    this.min = function() {
+        var min = array[0];
+        for (var i = 1; i < array.length; i++) {
+            if (min > array[i]) {
+                min = array[i];
+            }
+        }
+
+        return min;
+    };
+
+    //二分折半搜索
+    this.binarySearch = function(item) {
+        //先对数组进行排序
+        this.quickSort();
+
+        var low = 0,
+            high = array.length - 1,
+            mid, elem;
+
+        while (low <= high) {
+            mid = Math.floor((low + high) / 2);
+            elem = array[mid];
+            if (elem < item) {
+                low = mid + 1;
+            } else if (elem > item) {
+                high = mid - 1;
+            } else {
+                return mid;
+            }
+        }
+
+        return -1;
+    };
 }
