@@ -77,6 +77,25 @@ function ArrayList() {
         }
     };
 
+    //希尔排序算法
+    this.shellSort = function() {
+        var len = array.length,
+            j,
+            temp;
+
+        for (var gap = Math.floor(len / 2); gap > 0; gap = Math.floor(gap / 2)) {
+            for (var i = gap; i < len; i++) {
+                j = i;
+                temp = array[i];
+                while (j > 0 && array[j - gap] > temp) {
+                    array[j] = array[j - gap];
+                    j -= gap;
+                }
+                array[j] = temp;
+            }
+        }
+    };
+
     //归并排序算法(时间复杂度O(nlogn))
     var merge = function(left, right) {
         var results = [],
