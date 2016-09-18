@@ -20,11 +20,16 @@
     function createRandomNonSortedArray() {
         var array = new ArrayList();
 
-        array.insert(3);
-        array.insert(5);
-        array.insert(1);
+        array.insert(9);
+        array.insert(12);
+        array.insert(17);
+        array.insert(30);
+        array.insert(50);
+        array.insert(20);
+        array.insert(60);
+        array.insert(65);
         array.insert(4);
-        array.insert(2);
+        array.insert(49);
 
         return array;
     }
@@ -54,12 +59,12 @@
     // array.insertionSort();
     // console.log(array.toString());
 
-    console.log('********** Shell Sort **********');
-    // array = createNonSortedArray(5);
-    var array = createRandomNonSortedArray();
-    console.log(array.toString());
-    array.shellSort();
-    console.log(array.toString());
+    // console.log('********** Shell Sort **********');
+    // // array = createNonSortedArray(5);
+    // var array = createRandomNonSortedArray();
+    // console.log(array.toString());
+    // array.shellSort();
+    // console.log(array.toString());
 
     // console.log('********** Merge Sort **********');
     // array = createNonSortedArray(8);
@@ -83,6 +88,12 @@
     // array.quickSort();
 
     // console.log(array.toString());
+
+    console.log('********** Heap Sort **********');
+    var array = createRandomNonSortedArray();
+
+    array.heapSort();
+    console.log(array.toString());
 
     // console.log('********** Sequential Sort #3 **********');
     // var array = createNonSortedArray(5);

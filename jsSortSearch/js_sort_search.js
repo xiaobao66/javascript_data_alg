@@ -186,6 +186,45 @@ function ArrayList() {
         quick(array, 0, array.length - 1);
     };
 
+    //调整数组形成最大堆
+    var minHeapFixDown = function(i, len) {
+        var j = 2 * i + 1,
+            temp = array[i];
+
+        while (j < len) {
+            if (j + 1 < len && array[j + 1] > array[j]) {
+                j++;
+            }
+
+            if (array[j] <= temp) {
+                break;
+            }
+
+            array[i] = array[j];
+            i = j;
+            j = 2 * i + 1;
+        }
+
+        array[i] = temp;
+    };
+
+    this.minHeapFix = function() {
+        for (var i = Math.floor(array.length / 2) - 1; i >= 0; i--) {
+            minHeapFixDown(i, array.length);
+        }
+    };
+
+    //堆排序算法(时间复杂度O(nlogn))
+    this.heapSort = function() {
+        //创建最小堆
+        this.minHeapFix();
+
+        for (var i = array.length - 1; i > 0; i--) {
+            swap(i, 0);
+            minHeapFixDown(0, i);
+        }
+    };
+
     //顺序搜索算法
     this.sequentialSearch = function(item) {
         for (var i = 0; i < array.length; i++) {
