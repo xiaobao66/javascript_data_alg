@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+
+<head>
+    <meta charset="UTF-8">
+    <title>js hashMap</title>
+    <script type="text/javascript" src="js_hashMapLinearExploring.js"></script>
+</head>
+
+<body>
+    <script type="text/javascript">
+    var hashMapLinearExploring = new HashMapLinearExploring(1000);
+
+    hashMapLinearExploring.put('Gandalf', 'gandalf@email.com');
+    hashMapLinearExploring.put('John', 'johnsnow@email.com');
+    hashMapLinearExploring.put('Tyrion', 'tyrion@email.com');
+    hashMapLinearExploring.put('Aaron', 'aaron@email.com');
+    hashMapLinearExploring.put('Donnie', 'donnie@email.com');
+    hashMapLinearExploring.put('Ana', 'ana@email.com');
+    hashMapLinearExploring.put('Jonathan', 'jonathan@email.com');
+    hashMapLinearExploring.put('Jamie', 'jamie@email.com');
+    hashMapLinearExploring.put('Sue', 'sue@email.com');
+    hashMapLinearExploring.put('Mindy', 'mindy@email.com');
+    hashMapLinearExploring.put('Paul', 'paul@email.com');
+    hashMapLinearExploring.put('Nathan', 'nathan@email.com');
+
+    console.log('**** Printing Hash **** ');
+
+    hashMapLinearExploring.print();
+
+    console.log('**** Get **** ');
+
+    console.log(hashMapLinearExploring.get('Nathan'));
+    console.log(hashMapLinearExploring.get('Loiane'));
+
+    console.log('**** Remove **** ');
+
+    hashMapLinearExploring.remove('Paul');
+    console.log(hashMapLinearExploring.get('Paul'));
+    hashMapLinearExploring.remove('Paul');
+    hashMapLinearExploring.print();
+    </script>
+</body>
+
+</html>
